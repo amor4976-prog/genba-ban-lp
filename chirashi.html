@@ -1,0 +1,160 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<title>現場番 チラシ（A4・印刷用）</title>
+<link rel="preconnect" href="https://fonts.googleapis.com" />
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+<link href="https://fonts.googleapis.com/css2?family=Noto+Sans+JP:wght@400;500;700;900&display=swap" rel="stylesheet" />
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/tabler-icons/3.31.0/tabler-icons.min.css" />
+<style>
+  :root{
+    --navy:#16314f; --navy2:#1f4d7a; --accent:#e8913a; --accent2:#d97b1f;
+    --green:#2e9e5b; --greenbg:#eaf7ef; --red:#d2553f;
+    --ink:#1c2530; --mut:#5c6b7a; --line:#e6eaef; --bg:#eef2f7;
+  }
+  *{box-sizing:border-box;margin:0;padding:0;-webkit-print-color-adjust:exact;print-color-adjust:exact;}
+  body{font-family:"Noto Sans JP",system-ui,sans-serif;color:var(--ink);background:var(--bg);line-height:1.6;-webkit-font-smoothing:antialiased;display:flex;justify-content:center;padding:24px;}
+  .page{width:210mm;min-height:297mm;background:#fff;position:relative;overflow:hidden;display:flex;flex-direction:column;}
+
+  /* ヘッダー */
+  .hd{background:var(--navy);color:#fff;padding:6mm 14mm 5mm;}
+  .hd .top{display:flex;align-items:center;justify-content:space-between;}
+  .hd .logo{display:flex;align-items:center;gap:9px;font-weight:900;font-size:23px;}
+  .hd .logo .mk{width:32px;height:32px;border-radius:8px;background:#fff;color:var(--navy);display:grid;place-items:center;font-size:20px;}
+  .hd .tagchip{background:var(--accent);color:#fff;font-weight:700;font-size:11px;padding:5px 12px;border-radius:999px;}
+  .hd h1{font-size:23px;font-weight:900;line-height:1.36;letter-spacing:-.5px;margin-top:4mm;}
+  .hd h1 .hl{color:var(--accent);}
+  .hd .lead{color:#cdddee;font-size:11.5px;margin-top:2.5mm;max-width:165mm;}
+
+  /* 本文 */
+  .body{padding:4mm 14mm 0;flex:1;}
+  .eyebrow{color:var(--accent2);font-weight:700;font-size:11.5px;letter-spacing:.5px;display:flex;align-items:center;gap:6px;}
+
+  .feats{display:grid;grid-template-columns:1fr 1fr 1fr;gap:3mm 6mm;margin-top:3mm;}
+  .ft{display:flex;gap:8px;align-items:flex-start;}
+  .ft .ic{width:29px;height:29px;border-radius:8px;background:#eef3f9;color:var(--navy2);display:grid;place-items:center;font-size:16px;flex-shrink:0;}
+  .ft b{font-size:12.5px;font-weight:700;color:var(--navy);display:block;line-height:1.3;}
+  .ft span{font-size:10.5px;color:var(--mut);line-height:1.35;}
+
+  /* 違い帯 */
+  .diff{display:grid;grid-template-columns:repeat(4,1fr);gap:0;margin-top:4mm;border:1px solid var(--line);border-radius:11px;overflow:hidden;}
+  .diff .d{padding:2.5mm 2mm;text-align:center;border-right:1px solid var(--line);}
+  .diff .d:last-child{border-right:none;}
+  .diff .d i{font-size:20px;color:var(--accent2);}
+  .diff .d b{display:block;font-size:12.5px;font-weight:900;color:var(--navy);margin-top:2px;}
+  .diff .d span{font-size:9.5px;color:var(--mut);line-height:1.3;}
+
+  /* 証拠 */
+  .proof{margin-top:4mm;background:var(--navy);border-radius:12px;padding:4mm 6mm;color:#fff;display:flex;gap:4mm;align-items:center;}
+  .proof .q{font-size:15.5px;font-weight:900;line-height:1.4;}
+  .proof .q .hl{color:var(--accent);}
+  .proof .w{font-size:10.5px;color:#bcd0e6;margin-top:3px;}
+  .proof .seal{width:42px;height:42px;border-radius:50%;background:var(--accent);color:#fff;display:grid;place-items:center;font-size:22px;flex-shrink:0;}
+
+  /* CTA + QR */
+  .cta{display:grid;grid-template-columns:1.25fr 1fr;gap:5mm;margin-top:4mm;align-items:center;}
+  .cta .offer .ob{display:inline-flex;align-items:center;gap:7px;background:#fff4e8;color:var(--accent2);font-weight:700;font-size:12px;padding:4px 12px;border-radius:999px;}
+  .cta .offer h2{font-size:16px;font-weight:900;color:var(--navy);margin-top:2.5mm;line-height:1.38;}
+  .cta .offer ul{list-style:none;margin-top:2.5mm;display:flex;flex-direction:column;gap:4px;}
+  .cta .offer li{display:flex;gap:8px;align-items:flex-start;font-size:12px;color:var(--ink);}
+  .cta .offer li i{color:var(--green);font-size:15px;flex-shrink:0;margin-top:1px;}
+  .cta .offer .price{margin-top:2.5mm;font-size:12px;color:var(--mut);}
+  .cta .offer .price b{color:var(--navy);font-size:16px;font-weight:900;}
+
+  .qrbox{border:2px dashed var(--accent);border-radius:14px;padding:3.5mm;text-align:center;background:#fffaf3;}
+  .qrbox .qrt{font-weight:900;color:var(--navy);font-size:13px;display:flex;align-items:center;justify-content:center;gap:5px;}
+  .qrbox .qrs{font-size:10px;color:var(--mut);margin:2px 0 2mm;}
+  .qrbox .qr{width:30mm;height:30mm;margin:0 auto;}
+  .qrbox .qr svg{width:100%;height:100%;display:block;}
+  .qrbox .url{font-size:9px;color:var(--accent2);font-weight:700;margin-top:2mm;word-break:break-all;}
+
+  /* フッター */
+  .ft-bar{margin-top:auto;background:#f7f9fc;border-top:1px solid var(--line);padding:4mm 14mm;display:flex;justify-content:space-between;align-items:center;flex-wrap:wrap;gap:8px;}
+  .ft-bar .co{font-size:12px;color:var(--mut);}
+  .ft-bar .co b{color:var(--navy);font-size:13.5px;}
+  .ft-bar .contact{display:flex;gap:16px;font-size:13px;font-weight:700;color:var(--navy);flex-wrap:wrap;}
+  .ft-bar .contact span{display:inline-flex;align-items:center;gap:6px;}
+  .ft-bar .contact i{color:var(--accent2);font-size:17px;}
+
+  .printbar{position:fixed;top:14px;right:14px;z-index:99;}
+  .printbar button{background:var(--accent);color:#fff;border:none;font-weight:700;font-size:14px;padding:11px 20px;border-radius:10px;cursor:pointer;font-family:inherit;box-shadow:0 6px 18px -6px rgba(0,0,0,.4);}
+  @media print{
+    body{background:#fff;padding:0;}
+    .page{width:auto;min-height:auto;box-shadow:none;}
+    .printbar{display:none;}
+    @page{size:A4;margin:0;}
+  }
+</style>
+</head>
+<body>
+<div class="printbar"><button onclick="window.print()"><i class="ti ti-printer"></i> 印刷 / PDF保存</button></div>
+
+<div class="page">
+  <div class="hd">
+    <div class="top">
+      <div class="logo"><span class="mk"><i class="ti ti-shield-check"></i></span>現場番</div>
+      <span class="tagchip">小さな工務店のための業務システム</span>
+    </div>
+    <h1>覚えるアプリは、ゼロ。<br><span class="hl">LINEだけ</span>で、現場も利益も回る。</h1>
+    <p class="lead">原価・利益率、工程、業者連絡、お客様対応——バラバラの管理を AI と LINE でひとつに。大手ツールみたいに、高くも難しくもありません。</p>
+  </div>
+
+  <div class="body">
+    <div class="eyebrow"><i class="ti ti-sparkles"></i> 現場番が、まるごと面倒を見ます</div>
+    <div class="feats">
+      <div class="ft"><span class="ic"><i class="ti ti-chart-line"></i></span><div><b>原価・粗利が一目で</b><span>1棟ごとの利益をリアルタイム表示</span></div></div>
+      <div class="ft"><span class="ic"><i class="ti ti-message-2"></i></span><div><b>業者とLINEで完結</b><span>予定共有・報告・材料依頼まで</span></div></div>
+      <div class="ft"><span class="ic"><i class="ti ti-robot"></i></span><div><b>AIが事務を代行</b><span>週報も発注もLINEで頼むだけ</span></div></div>
+      <div class="ft"><span class="ic"><i class="ti ti-microphone"></i></span><div><b>声で日報・発注</b><span>職人さんはしゃべるだけでOK</span></div></div>
+      <div class="ft"><span class="ic"><i class="ti ti-cloud-rain"></i></span><div><b>天気×工程の警告</b><span>雨で止まる現場を前日に検知</span></div></div>
+      <div class="ft"><span class="ic"><i class="ti ti-home-heart"></i></span><div><b>お客様もLINEで安心</b><span>進捗・見積をお客様自身が確認</span></div></div>
+    </div>
+
+    <div class="diff">
+      <div class="d"><i class="ti ti-coin"></i><b>安い</b><span>月2.98万〜の定額</span></div>
+      <div class="d"><i class="ti ti-mood-smile"></i><b>簡単</b><span>覚えるアプリ無し</span></div>
+      <div class="d"><i class="ti ti-robot"></i><b>AIが代行</b><span>入力・事務はおまかせ</span></div>
+      <div class="d"><i class="ti ti-tools"></i><b>現役の工務店製</b><span>あるあるが分かる</span></div>
+    </div>
+
+    <div class="proof">
+      <span class="seal"><i class="ti ti-rosette-discount-check"></i></span>
+      <div>
+        <div class="q">「社員が全員辞めても、<span class="hl">現場は止まらなかった。</span>」</div>
+        <div class="w">— 開発元・株式会社シバサンホーム（奈良／大工歴43年）が、自社で使い込んで開発。だから、効きます。</div>
+      </div>
+    </div>
+
+    <div class="cta">
+      <div class="offer">
+        <span class="ob"><i class="ti ti-flame"></i> 先着3社・募集中</span>
+        <h2>いきなり買わなくて、大丈夫。<br>まず「お試し導入」から。</h2>
+        <ul>
+          <li><i class="ti ti-check"></i><b>初月は無料</b>でおためし。続けるかは、それから。</li>
+          <li><i class="ti ti-check"></i>お願いは、正直な感想だけ。しつこい営業はしません。</li>
+        </ul>
+        <div class="price">続ける場合も <b>モニター特別価格 月¥19,800</b>（先着3社・ずっと）</div>
+      </div>
+      <div class="qrbox">
+        <div class="qrt"><i class="ti ti-device-mobile"></i> スマホで今すぐ体験</div>
+        <div class="qrs">QRをかざすと、AIに質問して試せます</div>
+        <div class="qr"><svg viewBox="0 0 41 41" shape-rendering="crispEdges" xmlns="http://www.w3.org/2000/svg"><path fill="#ffffff" d="M0 0h41v41H0z"/><path stroke="#16314f" d="M4 4.5h7m3 0h3m3 0h1m1 0h2m2 0h3m1 0h7M4 5.5h1m5 0h1m2 0h1m1 0h2m2 0h1m2 0h1m1 0h1m1 0h1m1 0h1m1 0h1m5 0h1M4 6.5h1m1 0h3m1 0h1m1 0h1m1 0h1m1 0h1m1 0h1m2 0h4m3 0h1m1 0h3m1 0h1M4 7.5h1m1 0h3m1 0h1m1 0h1m1 0h1m5 0h1m2 0h1m2 0h1m1 0h1m1 0h3m1 0h1M4 8.5h1m1 0h3m1 0h1m1 0h2m2 0h6m2 0h1m2 0h2m1 0h1m1 0h3m1 0h1M4 9.5h1m5 0h1m1 0h2m7 0h1m1 0h1m1 0h1m2 0h1m1 0h1m5 0h1M4 10.5h7m1 0h1m1 0h1m1 0h1m1 0h1m1 0h1m1 0h1m1 0h1m1 0h1m1 0h7M12 11.5h1m3 0h1m1 0h1m1 0h1m1 0h5m1 0h1M4 12.5h1m1 0h5m2 0h2m2 0h2m2 0h1m1 0h1m6 0h5M5 13.5h2m1 0h2m1 0h1m1 0h1m1 0h3m3 0h4m1 0h3m1 0h2m1 0h2m1 0h1M5 14.5h1m4 0h1m3 0h1m1 0h4m1 0h1m2 0h1m1 0h1m1 0h1m3 0h1m1 0h2M4 15.5h3m1 0h1m3 0h2m1 0h1m1 0h1m3 0h4m2 0h2m1 0h1m1 0h5M5 16.5h1m2 0h1m1 0h2m1 0h1m1 0h2m1 0h3m2 0h4m2 0h1m1 0h3m1 0h1M5 17.5h1m2 0h2m1 0h1m3 0h3m1 0h1m2 0h1m2 0h1m1 0h1m2 0h1m2 0h4M4 18.5h1m1 0h1m3 0h2m1 0h4m2 0h3m2 0h1m1 0h1m1 0h3m2 0h3M4 19.5h2m1 0h3m1 0h1m2 0h1m3 0h2m5 0h2m2 0h2m1 0h3M6 20.5h8m1 0h2m2 0h1m1 0h1m5 0h1m1 0h1m1 0h2m3 0h1M4 21.5h1m1 0h1m7 0h1m1 0h3m1 0h1m1 0h6m2 0h2m1 0h2m1 0h1M4 22.5h2m1 0h1m2 0h1m1 0h1m3 0h2m1 0h2m1 0h1m2 0h1m5 0h2m1 0h2M5 23.5h1m6 0h3m4 0h2m2 0h1m1 0h3m1 0h1m1 0h6M4 24.5h1m5 0h5m1 0h1m1 0h2m2 0h1m2 0h1m1 0h3m1 0h3m1 0h2M4 25.5h1m1 0h3m3 0h1m1 0h2m2 0h4m2 0h4m2 0h2m1 0h1m2 0h1M4 26.5h1m2 0h2m1 0h2m1 0h2m1 0h2m4 0h2m2 0h1m8 0h1M4 27.5h1m2 0h3m2 0h1m1 0h4m2 0h1m2 0h3m3 0h1m1 0h1m1 0h3M4 28.5h1m1 0h1m1 0h4m2 0h1m5 0h2m1 0h2m2 0h6m2 0h2M12 29.5h1m3 0h1m1 0h1m1 0h2m1 0h2m3 0h1m3 0h1m1 0h1m1 0h1M4 30.5h7m5 0h1m2 0h1m1 0h1m4 0h3m1 0h1m1 0h1m1 0h1M4 31.5h1m5 0h1m1 0h1m3 0h2m1 0h1m1 0h2m4 0h2m3 0h5M4 32.5h1m1 0h3m1 0h1m1 0h2m3 0h1m2 0h1m3 0h3m1 0h6m1 0h2M4 33.5h1m1 0h3m1 0h1m1 0h1m1 0h1m1 0h2m1 0h1m2 0h1m4 0h3m2 0h1m1 0h1m1 0h1M4 34.5h1m1 0h3m1 0h1m1 0h1m5 0h3m3 0h4m2 0h2M4 35.5h1m5 0h1m5 0h1m2 0h1m2 0h1m2 0h2m2 0h2m1 0h3M4 36.5h7m1 0h1m1 0h1m1 0h1m2 0h1m1 0h1m2 0h1m1 0h1m1 0h1m1 0h2m3 0h1"/></svg></div>
+        <div class="url">amor4976-prog.github.io/genba-ban-lp</div>
+      </div>
+    </div>
+  </div>
+
+  <div class="ft-bar">
+    <div class="co"><b>株式会社シバサンホーム</b><br>奈良県奈良市北之庄町41-1</div>
+    <div class="contact">
+      <span><i class="ti ti-phone"></i> 0120-154-483</span>
+      <span><i class="ti ti-mail"></i> yasuhiro@shibasun.jp</span>
+      <span><i class="ti ti-brand-line"></i> LINEでも受付</span>
+    </div>
+  </div>
+</div>
+
+</body>
+</html>
