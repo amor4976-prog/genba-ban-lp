@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<title>現場番 名刺・裏面（QR）</title>
+<link rel="preconnect" href="https://fonts.googleapis.com" />
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+<link href="https://fonts.googleapis.com/css2?family=Noto+Sans+JP:wght@400;500;700;900&display=swap" rel="stylesheet" />
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/tabler-icons/3.31.0/tabler-icons.min.css" />
+<style>
+  :root{--navy:#16314f;--accent:#e8913a;--ink:#1c2530;--mut:#5c6b7a;--line:#e6eaef;}
+  *{box-sizing:border-box;margin:0;padding:0;-webkit-print-color-adjust:exact;print-color-adjust:exact;}
+  body{font-family:"Noto Sans JP",system-ui,sans-serif;background:#eef2f7;color:var(--ink);display:flex;flex-direction:column;align-items:center;gap:18px;padding:30px;}
+  .hint{font-size:13px;color:var(--mut);max-width:380px;text-align:center;line-height:1.7;}
+  /* 名刺サイズ 91×55mm */
+  .card{width:91mm;height:55mm;background:#fff;border:1px solid var(--line);border-radius:3mm;overflow:hidden;display:flex;box-shadow:0 6px 20px -8px rgba(22,49,79,.35);}
+  .left{flex:1;background:var(--navy);color:#fff;padding:6mm 5mm;display:flex;flex-direction:column;justify-content:space-between;}
+  .left .logo{display:flex;align-items:center;gap:2mm;font-weight:900;font-size:18px;}
+  .left .logo .mk{width:8mm;height:8mm;border-radius:2mm;background:#fff;color:var(--navy);display:grid;place-items:center;font-size:16px;}
+  .left .cat{font-size:9px;color:#bcd0e6;margin-top:1.5mm;letter-spacing:.3px;}
+  .left .tag{font-size:13px;font-weight:700;line-height:1.5;}
+  .left .tag .hl{color:var(--accent);}
+  .left .contact{font-size:8.5px;color:#cdddee;line-height:1.7;}
+  .right{width:36mm;background:#fffaf3;border-left:1px dashed var(--accent);display:flex;flex-direction:column;align-items:center;justify-content:center;padding:3mm;text-align:center;}
+  .right .qr{width:25mm;height:25mm;}
+  .right .qr svg{width:100%;height:100%;display:block;}
+  .right .scan{font-size:9px;font-weight:900;color:var(--navy);margin-top:1.5mm;display:flex;align-items:center;gap:1mm;}
+  .right .sub{font-size:7.5px;color:var(--mut);margin-top:.5mm;line-height:1.4;}
+  .printbar button{background:var(--accent);color:#fff;border:none;font-weight:700;font-size:14px;padding:11px 22px;border-radius:10px;cursor:pointer;font-family:inherit;}
+  @media print{body{background:#fff;padding:0;}.hint,.printbar{display:none;}.card{box-shadow:none;border:none;}@page{margin:8mm;}}
+</style>
+</head>
+<body>
+  <div class="hint">名刺の<b>裏面</b>デザインです。「印刷/PDF」で保存して、印刷業者に渡せます（91×55mm）。表面はいつもの名刺のままでOK。</div>
+  <div class="card">
+    <div class="left">
+      <div>
+        <div class="logo"><span class="mk"><i class="ti ti-shield-check"></i></span>現場番</div>
+        <div class="cat">小さな工務店のための業務システム</div>
+      </div>
+      <div class="tag">覚えるアプリは、ゼロ。<br><span class="hl">LINEだけ</span>で現場が回る。</div>
+      <div class="contact">株式会社シバサンホーム<br>0120-154-483 ／ yasuhiro@shibasun.jp</div>
+    </div>
+    <div class="right">
+      <div class="qr"><svg viewBox="0 0 41 41" shape-rendering="crispEdges" xmlns="http://www.w3.org/2000/svg"><path fill="#ffffff" d="M0 0h41v41H0z"/><path stroke="#16314f" d="M4 4.5h7m3 0h3m3 0h1m1 0h2m2 0h3m1 0h7M4 5.5h1m5 0h1m2 0h1m1 0h2m2 0h1m2 0h1m1 0h1m1 0h1m1 0h1m1 0h1m5 0h1M4 6.5h1m1 0h3m1 0h1m1 0h1m1 0h1m1 0h1m1 0h1m2 0h4m3 0h1m1 0h3m1 0h1M4 7.5h1m1 0h3m1 0h1m1 0h1m1 0h1m5 0h1m2 0h1m2 0h1m1 0h1m1 0h3m1 0h1M4 8.5h1m1 0h3m1 0h1m1 0h2m2 0h6m2 0h1m2 0h2m1 0h1m1 0h3m1 0h1M4 9.5h1m5 0h1m1 0h2m7 0h1m1 0h1m1 0h1m2 0h1m1 0h1m5 0h1M4 10.5h7m1 0h1m1 0h1m1 0h1m1 0h1m1 0h1m1 0h1m1 0h1m1 0h1m1 0h7M12 11.5h1m3 0h1m1 0h1m1 0h1m1 0h5m1 0h1M4 12.5h1m1 0h5m2 0h2m2 0h2m2 0h1m1 0h1m6 0h5M5 13.5h2m1 0h2m1 0h1m1 0h1m1 0h3m3 0h4m1 0h3m1 0h2m1 0h2m1 0h1M5 14.5h1m4 0h1m3 0h1m1 0h4m1 0h1m2 0h1m1 0h1m1 0h1m3 0h1m1 0h2M4 15.5h3m1 0h1m3 0h2m1 0h1m1 0h1m3 0h4m2 0h2m1 0h1m1 0h5M5 16.5h1m2 0h1m1 0h2m1 0h1m1 0h2m1 0h3m2 0h4m2 0h1m1 0h3m1 0h1M5 17.5h1m2 0h2m1 0h1m3 0h3m1 0h1m2 0h1m2 0h1m1 0h1m2 0h1m2 0h4M4 18.5h1m1 0h1m3 0h2m1 0h4m2 0h3m2 0h1m1 0h1m1 0h3m2 0h3M4 19.5h2m1 0h3m1 0h1m2 0h1m3 0h2m5 0h2m2 0h2m1 0h3M6 20.5h8m1 0h2m2 0h1m1 0h1m5 0h1m1 0h1m1 0h2m3 0h1M4 21.5h1m1 0h1m7 0h1m1 0h3m1 0h1m1 0h6m2 0h2m1 0h2m1 0h1M4 22.5h2m1 0h1m2 0h1m1 0h1m3 0h2m1 0h2m1 0h1m2 0h1m5 0h2m1 0h2M5 23.5h1m6 0h3m4 0h2m2 0h1m1 0h3m1 0h1m1 0h6M4 24.5h1m5 0h5m1 0h1m1 0h2m2 0h1m2 0h1m1 0h3m1 0h3m1 0h2M4 25.5h1m1 0h3m3 0h1m1 0h2m2 0h4m2 0h4m2 0h2m1 0h1m2 0h1M4 26.5h1m2 0h2m1 0h2m1 0h2m1 0h2m4 0h2m2 0h1m8 0h1M4 27.5h1m2 0h3m2 0h1m1 0h4m2 0h1m2 0h3m3 0h1m1 0h1m1 0h3M4 28.5h1m1 0h1m1 0h4m2 0h1m5 0h2m1 0h2m2 0h6m2 0h2M12 29.5h1m3 0h1m1 0h1m1 0h2m1 0h2m3 0h1m3 0h1m1 0h1m1 0h1M4 30.5h7m5 0h1m2 0h1m1 0h1m4 0h3m1 0h1m1 0h1m1 0h1M4 31.5h1m5 0h1m1 0h1m3 0h2m1 0h1m1 0h2m4 0h2m3 0h5M4 32.5h1m1 0h3m1 0h1m1 0h2m3 0h1m2 0h1m3 0h3m1 0h6m1 0h2M4 33.5h1m1 0h3m1 0h1m1 0h1m1 0h1m1 0h2m1 0h1m2 0h1m4 0h3m2 0h1m1 0h1m1 0h1M4 34.5h1m1 0h3m1 0h1m1 0h1m5 0h3m3 0h4m2 0h2M4 35.5h1m5 0h1m5 0h1m2 0h1m2 0h1m2 0h2m2 0h2m1 0h3M4 36.5h7m1 0h1m1 0h1m1 0h1m2 0h1m1 0h1m2 0h1m1 0h1m1 0h1m1 0h2m3 0h1"/></svg></div>
+      <div class="scan"><i class="ti ti-device-mobile"></i> スマホで体験</div>
+      <div class="sub">QRをかざすと<br>その場で触れます</div>
+    </div>
+  </div>
+  <div class="printbar"><button onclick="window.print()"><i class="ti ti-printer"></i> 印刷 / PDF保存</button></div>
+</body>
+</html>
